@@ -5,14 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Alarm"
         mc:Ignorable="d"
-        Title="Alarm" Height="450" Width="800" Background="{x:Null}" Foreground="{x:Null}" WindowStyle="None">
+        Icon="resource/clock.ico"
+        Title="Alarm" Height="70" Width="240" Background="{x:Null}" Foreground="{x:Null}" MinWidth="240" MinHeight="70" MaxWidth="240" MaxHeight="70" WindowStyle="None" SnapsToDevicePixels="True" BorderThickness="0" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Effect>
         <DropShadowEffect/>
     </Window.Effect>
-    <Grid>
-        <Button Click="Button_Exit_Click" Content="X" HorizontalAlignment="Left" Margin="501,211,0,0" VerticalAlignment="Top" Width="20" Height="20" Background="#FFB7C5CB" BorderBrush="#FF979797">
+    <Grid MaxWidth="232" MaxHeight="62" ScrollViewer.VerticalScrollBarVisibility="Disabled" UseLayoutRounding="False" Opacity="0.8" AllowDrop="True" MinWidth="232" MinHeight="62" Background="#00000000">
+        <Grid.Effect>
+            <DropShadowEffect/>
+        </Grid.Effect>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="60" />
+            <ColumnDefinition Width="30" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Content="00:00:00" x:Name="labelClock" HorizontalAlignment="Center" Height="42" HorizontalContentAlignment="Center" Margin="10,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Foreground="Aqua" FontSize="24"/>
+        <Button Grid.RowSpan="2" Grid.Column="1" x:Name="buttonStart" Content="START" Click="buttonStart_Click" Background="#FF5BA64F" BorderBrush="{x:Null}" Foreground="White" FontWeight="Bold" FontSize="16"></Button>
+        <Button Grid.Row="0" Grid.Column="2" x:Name="buttonExit" Click="buttonExit_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF361A1A" BorderBrush="{x:Null}" Foreground="White">
             <Button.ToolTip>Exit</Button.ToolTip>
+            <StackPanel>
+                <Image Source="resource/delete.png" Width="18"></Image>
+            </StackPanel>
         </Button>
-
+        <Button Grid.Row="1" Grid.Column="2" x:Name="buttonSettings" BorderBrush="#FF707070" Background="#FF1A3F4F" Click="buttonSettings_Click">
+            <Button.ToolTip>Settings</Button.ToolTip>
+            <StackPanel>
+                <Image Source="resource/system.png" Width="24"></Image>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>

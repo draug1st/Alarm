@@ -1,0 +1,18 @@
+﻿<Window x:Class="Alarm.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Alarm"
+        mc:Ignorable="d"
+        Title="Настройки" Height="450" Width="450">
+    <StackPanel>
+        <Label Content="Время через которое сработает будильник:" />
+        <TextBox x:Name="tbMaxTime"></TextBox>
+        <Label Content="Звуковой файл" Margin="0,10,0,5"></Label>
+        <TextBlock x:Name="strFilePath" TextWrapping="Wrap" Text="Путь до файла"/>
+        <Button Content="Загрузить файл" x:Name="buttonGetFile" Margin="0,5,0,0" Click="buttonGetFile_Click"/>
+        <Button x:Name="buttonSaveSettings" Content="Сохранить" Margin="0,50,0,0" Click="buttonSaveSettings_Click"/>
+
+    </StackPanel>
+</Window>
